@@ -4,8 +4,13 @@ This repository documents my journey of learning SQL. I'll be working on creatin
 
 ## Database Projects
 
-1. Company Database
-2. ... (more projects coming soon)
+1. **Company Database**:  
+   I designed and managed a Company Database. For the first phase of learning, I'll use this database to learn and practice various SQL queries.
+
+   [View the Company Database SQL Code](code/company.sql)
+
+2. 
+
 
 ## Daily Progress
 
@@ -14,12 +19,6 @@ This repository documents my journey of learning SQL. I'll be working on creatin
 - [Day 3: Advanced Querying and Joins](#day-3-advanced-querying-and-joins)
 - [Day 4: Constraints and Table Relationships](#day-4-constraints-and-table-relationships)
 - [Day 5: Views and Indexes](#day-5-views-and-indexes)
-
-## SQL Code for Company Database
-
-During the first phase, I focused on creating and managing a **Company Database**. You can explore the complete SQL code by following the link below:
-
-[View the Company Database SQL Code](code/company.sql)
 
 ## Database Visualization
 
