@@ -1,108 +1,37 @@
 # My SQL Learning Journey
 
-This repository tracks my progress in learning SQL. I'll be creating databases and documenting my daily learnings.
+This repository documents my journey of learning SQL. I'll be working on creating databases and recording my daily progress.
 
 ## Database Projects
 
 1. Company Database
-2. ..........
+2. ... (more projects coming soon)
 
 ## Daily Progress
-I'll be working with a Company database throughout the first learning phase.
-```sql
-CREATE DATABASE company;
-USE company;
 
-CREATE TABLE EMPLOYEE (
-    Fname VARCHAR(15) NOT NULL,
-    Minit CHAR(1),
-    Lname VARCHAR(15) NOT NULL,
-    Ssn CHAR(9) NOT NULL,
-    Bdate DATE,
-    Address VARCHAR(30),
-    Sex CHAR(1),
-    Salary DECIMAL(10,2),
-    Super_ssn CHAR(9),  -- without supervisor, employee data can be inserted so we removed not null
-    Dno INT, -- same for here
-    PRIMARY KEY (Ssn)
-);
+- [Day 1: Introduction to SQL and Database Concepts](#day-1-introduction-to-sql-and-database-concepts)
+- [Day 2: Basic Queries and Data Manipulation](#day-2-basic-queries-and-data-manipulation)
+- [Day 3: Advanced Querying and Joins](#day-3-advanced-querying-and-joins)
+- [Day 4: Constraints and Table Relationships](#day-4-constraints-and-table-relationships)
+- [Day 5: Views and Indexes](#day-5-views-and-indexes)
 
-CREATE TABLE DEPARTMENT (
-    Dname VARCHAR(15) NOT NULL,
-    Dnumber INT NOT NULL,
-    Mgr_ssn CHAR(9), -- not null hataiyo, coz it allows insertion without manager
-    Mgr_start_date DATE,
-    PRIMARY KEY (Dnumber),
-    UNIQUE (Dname)
-);
+## SQL Code for Company Database
 
-CREATE TABLE DEPT_LOCATIONS (
-    Dnumber INT NOT NULL,
-    Dlocation VARCHAR(15) NOT NULL,
-    PRIMARY KEY (Dnumber, Dlocation)
-);
+During the first phase, I focused on creating and managing a **Company Database**. You can explore the complete SQL code by following the link below:
 
-CREATE TABLE PROJECT (
-    Pname VARCHAR(15) NOT NULL,
-    Pnumber INT NOT NULL,
-    Plocation VARCHAR(15),
-    Dnum INT NOT NULL,
-    PRIMARY KEY (Pnumber),
-    UNIQUE (Pname)
-);
+[View the Company Database SQL Code](code/company.sql)
 
-CREATE TABLE WORKS_ON (
-    Essn CHAR(9) NOT NULL,
-    Pno INT NOT NULL,
-    Hours DECIMAL(3,1), -- sample table ma hours data null ma ni xa
-    PRIMARY KEY (Essn, Pno)
-);
+## Database Visualization
 
-CREATE TABLE DEPENDENT (
-    Essn CHAR(9) NOT NULL,
-    Dependent_name VARCHAR(15) NOT NULL,
-    Sex CHAR(1),
-    Bdate DATE,
-    Relationship VARCHAR(8),
-    PRIMARY KEY (Essn, Dependent_name)
-);
--- links of tables using the simpler fk names
-ALTER TABLE EMPLOYEE
-ADD CONSTRAINT FK_Employee_Supervisor
-FOREIGN KEY (Super_ssn) REFERENCES EMPLOYEE(Ssn)
-ON DELETE SET NULL ON UPDATE CASCADE,
-ADD CONSTRAINT FK_Employee_Department
-FOREIGN KEY (Dno) REFERENCES DEPARTMENT(Dnumber)
-ON DELETE SET NULL ON UPDATE CASCADE;
+After populating the database with data, here are visual representations of the relationships between tables:
 
-ALTER TABLE DEPARTMENT
-ADD CONSTRAINT FK_Department_Employee
-FOREIGN KEY (Mgr_ssn) REFERENCES EMPLOYEE(Ssn)
-ON DELETE SET NULL ON UPDATE CASCADE;
+### Employee, Department, and Locations Relations
+![EMPLOYEE-DEPARTMENT-DEPT_LOCATIONS](images/emp_dept_deptloc.png)
 
-ALTER TABLE DEPT_LOCATIONS
-ADD CONSTRAINT FK_DeptLocations_Department
-FOREIGN KEY (Dnumber) REFERENCES DEPARTMENT(Dnumber)
-ON DELETE CASCADE ON UPDATE CASCADE;
+### Project, Works On, and Dependent Relations
+![PROJECT-WORKS_ON-DEPENDENT](images/project_workson_dependent.png)
 
-ALTER TABLE PROJECT
-ADD CONSTRAINT FK_Project_Department
-FOREIGN KEY (Dnum) REFERENCES DEPARTMENT(Dnumber)
-ON DELETE CASCADE ON UPDATE CASCADE;
 
-ALTER TABLE WORKS_ON
-ADD CONSTRAINT FK_WorksOn_Employee
-FOREIGN KEY (Essn) REFERENCES EMPLOYEE(Ssn)
-ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT FK_WorksOn_Project
-FOREIGN KEY (Pno) REFERENCES PROJECT(Pnumber)
-ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE DEPENDENT
-ADD CONSTRAINT FK_Dependent_Employee
-FOREIGN KEY (Essn) REFERENCES EMPLOYEE(Ssn)
-ON DELETE CASCADE ON UPDATE CASCADE;
-```
 
 ## Day 1: Introduction to SQL and Database Concepts
 
