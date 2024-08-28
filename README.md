@@ -24,10 +24,8 @@ This repository documents my journey of learning SQL. I'll be working on creatin
 
 After populating the database with data, here are visual representations of the relationships between tables:
 
-### Employee, Department, and Locations Relations
 ![EMPLOYEE-DEPARTMENT-DEPT_LOCATIONS](images/emp_dept_deptloc.png)
 
-### Project, Works On, and Dependent Relations
 ![PROJECT-WORKS_ON-DEPENDENT](images/project_workson_dependent.png)
 
 
