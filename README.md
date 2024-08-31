@@ -19,6 +19,7 @@ This repository documents my journey of learning SQL. I'll be working on creatin
 - [Day 3: Advanced Querying and Joins](#day-3-advanced-querying-and-joins)
 - [Day 4: Constraints and Table Relationships](#day-4-constraints-and-table-relationships)
 - [Day 5: Views and Indexes](#day-5-views-and-indexes)
+- [Day 6: Revision with another Database](#day-6-revision)
 
 ## Database Visualization
 
@@ -36,10 +37,10 @@ Today I kicked off my SQL learning adventure. Here's what I covered:
 
 ## Key Learnings
 - SQL basics: Structured Query Language for managing relational databases
-- Core concepts: Tables are like spreadsheets of related data
-Rows are individual entries (like a person's details)
-Columns categorize the data (like name, age, etc.)
-Primary Keys uniquely identify each row
+- Core concepts: Tables are like spreadsheets of related data <br>
+Rows are individual entries (like a person's details)<br>
+Columns categorize the data (like name, age, etc.)<br>
+Primary Keys uniquely identify each row<br>
 Foreign Keys link tables together
 - Different SQL flavors exist (MySQL, PostgreSQL, etc.) - I'm focusing on MySQL
 
@@ -270,3 +271,34 @@ CREATE INDEX idx_employee_lname ON EMPLOYEE(Lname);
 -- Composite index
 CREATE INDEX idx_employee_dno_salary ON EMPLOYEE(Dno, Salary);
 ```
+## Day 6: Revision
+Today, I reviewed all the previous lessons by creating another database and running queries on it. You can view the database structure here:<br>
+[View the University Database SQL Code](code/university.sql) <p>
+Here is the practice question:
+```
+1. Consider the university database for maintaining information concerning students,teachers, courses, and grades in a university environment as given below.
+
+TEACHER(TID, Tname, Taddress, Salary, Qualification)
+TEACHES(TID, SID)
+ENROLLEMENT(SID, CID)
+STUDENT(SID, Sname, Saddress, Section)
+GRADE_REPORT(SID, CID, Grade)
+COURSE(CID, Cname, Credit_hours)
+
+Specify the following queries in SQL on this database schema.
+
+a. Create all the tables in the database with proper primary key, foreign key, and
+referential integrity constraints.
+b. Insert appropriate data in the database.
+c. Retrieve the names of all teachers whose address is Kathmandu.
+d. Retrieve the names of all teachers whose salary is greater than 50000.
+e. Retrieve the names of all students taught by Nawaraj Paudel.
+f. Retrieve the names and grades obtained on all courses by the student Ram
+Timalsina.
+g. Retrieve the average salary of teachers.
+h. Count the number of students in each section.
+i. Count the number of students who studies DBMS course.
+Also, write equivalent Relational Algebra queries for SQL queries in questions c to f above
+```
+
+
