@@ -5,7 +5,6 @@ This repository documents my journey of learning SQL. I'll be working on creatin
 ## Database Projects
 For the first phase of learning, I'll use these databases to learn and practice  SQL queries.
 1. **Company Database**:  
-
    [View the Company Database SQL Code](code/company.sql)
 
 2. **University Database**:  
