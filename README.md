@@ -3,13 +3,15 @@
 This repository documents my journey of learning SQL. I'll be working on creating databases and recording my daily progress.
 
 ## Database Projects
-
+For the first phase of learning, I'll use these databases to learn and practice  SQL queries.
 1. **Company Database**:  
-   I designed and managed a Company Database. For the first phase of learning, I'll use this database to learn and practice various SQL queries.
 
    [View the Company Database SQL Code](code/company.sql)
 
-2. 
+2. **University Database**:  
+    [View the University Database SQL Code](code/university.sql)
+
+   
 
 
 ## Daily Progress
@@ -19,7 +21,7 @@ This repository documents my journey of learning SQL. I'll be working on creatin
 - [Day 3: Advanced Querying and Joins](#day-3-advanced-querying-and-joins)
 - [Day 4: Constraints and Table Relationships](#day-4-constraints-and-table-relationships)
 - [Day 5: Views and Indexes](#day-5-views-and-indexes)
-- [Day 6: Revision with another Database](#day-6-revision)
+- [Day 6: Revision](#day-6-revision)
 
 ## Database Visualization
 
@@ -272,8 +274,8 @@ CREATE INDEX idx_employee_lname ON EMPLOYEE(Lname);
 CREATE INDEX idx_employee_dno_salary ON EMPLOYEE(Dno, Salary);
 ```
 ## Day 6: Revision
-Today, I reviewed all the previous lessons by creating another database and running queries on it. You can view the database structure here:<br>
-[View the University Database SQL Code](code/university.sql) <p>
+Today, I reviewed all the previous lessons by creating another database and running queries on it. You can view the database structure here:  
+[ University Database +  Queries Practiced](code/university.sql) <p>
 Here is the practice question:
 ```
 1. Consider the university database for maintaining information concerning students,teachers, courses, and grades in a university environment as given below.
